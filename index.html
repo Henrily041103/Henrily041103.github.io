@@ -6,28 +6,30 @@
   </head>
   <body style="text-align: center">
     <div>
-      <button style="height: 60px; width: 150px; text-align: center; font-size: 20px;">
+      <button style="height: 60px; width: 150px; text-align: center; font-size: 20px;" onclick="handleClick1()">
         Thanh toán 1
       </button>
     </div>
     <br />
     <div>
-      <button style="height: 60px; width: 150px; text-align: center; font-size: 20px;">
+      <button style="height: 60px; width: 150px; text-align: center; font-size: 20px;" onclick="handleClick2()">
         Thanh toán 2
       </button>
     </div>
     <script>
       function handleClick1() {
         window.location.href = "exp://192.168.1.10:8081/--/payment/1";
+        console.log("exp://192.168.1.10:8081/--/payment/1")
       }
       function handleClick2() {
         const urlParams = new URLSearchParams(window.location.search);
-        const link = urlParams.get("link");
+        let link = urlParams.get("link");
 
         if ((link === null) | (link === undefined))
           link = "exp://bo60x04-anonymous-8081.exp.direct";
 
         window.location.href = link;
+        console.log(link)
       }
     </script>
     <script></script>
